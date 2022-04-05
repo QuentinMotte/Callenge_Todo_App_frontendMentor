@@ -1,0 +1,253 @@
+@font-face {
+  font-family: "jose-bold";
+  src: url(../fonts/JosefinSans-Bold.ttf);
+}
+
+@font-face {
+  font-family: "jose-regular";
+  src: url(../fonts/JosefinSans-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: jose-regular, sans-serif;
+  font-size: 1.120rem;
+  letter-spacing: -1px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-color: #161722;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+input[type="button"] {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+  font-size: 0.950rem;
+}
+
+input[type="button"]:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  font-family: jose-bold, sans-serif;
+}
+
+input[type="button"]:active {
+  color: #3a7bfd;
+}
+
+header {
+  max-width: 535px;
+  margin: 0 auto;
+}
+
+header .title-imgSunMoon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 80px auto 40px auto;
+}
+
+header .title-imgSunMoon h1 {
+  font-size: 2.25rem;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+  font-family: jose-bold, sans-serif;
+  color: #fafafa;
+}
+
+header .title-imgSunMoon .light-dark-mode {
+  cursor: pointer;
+}
+
+header .title-imgSunMoon #moon {
+  display: none;
+}
+
+header #item {
+  background: #25273c;
+  border: none;
+  width: 100%;
+  padding: 25px 0 25px 80px;
+  border-radius: 5px;
+  color: #cacde8;
+  position: relative;
+}
+
+header #item:focus {
+  caret-color: #3a7bfd;
+  outline: none;
+}
+
+header #item::-webkit-input-placeholder {
+  color: #777a92;
+}
+
+header #item:-ms-input-placeholder {
+  color: #777a92;
+}
+
+header #item::-ms-input-placeholder {
+  color: #777a92;
+}
+
+header #item::placeholder {
+  color: #777a92;
+}
+
+header form {
+  position: relative;
+}
+
+header form::before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 20px;
+  border: 1px solid #393a4c;
+  z-index: 200;
+}
+
+main {
+  max-width: 535px;
+  margin: 30px auto;
+  background: #25273c;
+  border-radius: 5px;
+}
+
+main li {
+  width: 100%;
+  padding: 25px 0 25px 80px;
+  color: #cacde8;
+  position: relative;
+  border-bottom: 1px solid #393a4c;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+main li::before {
+  content: "";
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 20px;
+  border: 1px solid #393a4c;
+}
+
+main li::after {
+  content: url(../images/icon-cross.svg);
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20px;
+  display: none;
+}
+
+main li:hover::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main li:hover::before {
+  border: 1px solid;
+  border-top-color: #6dcef9;
+  border-left-color: #6dcef9;
+  border-right-color: #e99de5;
+  border-bottom-color: #e99de5;
+}
+
+main li.checked {
+  text-decoration: line-through;
+  color: #393a4c;
+  position: relative;
+}
+
+main li.checked::before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  content: url(../images/icon-check.svg);
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 50px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 20px;
+  border: 1px solid #393a4c;
+  background: linear-gradient(153deg, #6dcef9 0%, #3eabe9 0%, #e99de5 100%);
+}
+
+body.light {
+  background-color: #fafafa;
+  background-image: url(../images/bg-desktop-light.jpg);
+}
+
+body.light #item {
+  background: #fafafa;
+  color: #484b6a;
+}
+
+body.light #item::-webkit-input-placeholder {
+  color: #9394a5;
+}
+
+body.light #item:-ms-input-placeholder {
+  color: #9394a5;
+}
+
+body.light #item::-ms-input-placeholder {
+  color: #9394a5;
+}
+
+body.light #item::placeholder {
+  color: #9394a5;
+}
+
+body.light form::before {
+  border: 1px solid #e4e5f1;
+}
+/*# sourceMappingURL=index.css.map */

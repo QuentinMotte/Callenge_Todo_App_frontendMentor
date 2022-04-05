@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Todo app</title>
+
+        <link rel="stylesheet" href="./assets/styles/index.css" />
+    </head>
+    <body>
+        <header>
+            <div class="title-imgSunMoon">
+                <div class="title-app">
+                    <h1>Todo</h1>
+                </div>
+
+                <div class="light-dark-mode">
+                    <img
+                        src="./assets/images/icon-moon.svg"
+                        alt="moon-icon-for-swap-theme"
+                        class="theme"
+                        id="moon"
+                    />
+
+                    <img
+                        src="./assets/images/icon-sun.svg"
+                        alt="sun-icon-for-swap-theme"
+                        class="theme"
+                        id="sun"
+                    />
+                </div>
+            </div>
+
+            <form action="">
+                <input
+                    type="text"
+                    id="item"
+                    placeholder="Create a new todo ..."
+                    autocomplete="off"
+                    minlength="2"
+                />
+            </form>
+        </header>
+        <main>
+            <div class="main">
+                <ul class="list">
+                    <li class="checked">Complete online Javascript course</li>
+                    <li>Jog around the park 3x</li>
+                    <li>10 minutes meditation</li>
+                    <li>Read for one hour</li>
+                    <li>Pick up groceries</li>
+                    <li>Complete Todo App on Frontend Mentor</li>
+                </ul>
+            </div>
+            <div class="footer-main">
+                <p><span id="numberOfitems"></span>items left</p>
+                <input
+                    type="button"
+                    name="active"
+                    id="btn"
+                    class="active"
+                    value="All"
+                    checked
+                />
+                <input type="button" id="btn" class="active" value="Active" />
+                <input
+                    type="button"
+                    id="btn"
+                    class="completed"
+                    value="Completed"
+                />
+                <input
+                    type="button"
+                    id="btn"
+                    class="clearCompleted"
+                    value="Clear completed"
+                />
+            </div>
+        </main>
+        <footer>
+            <p>Drag and drop to reorder list</p>
+            <div class="attribution">
+                Challenge by
+                <a
+                    href="https://www.frontendmentor.io?ref=challenge"
+                    target="_blank"
+                    >Frontend Mentor</a
+                >. Coded by <a href="#">Your Name Here</a>.
+            </div>
+        </footer>
+        <script src="./index.js"></script>
+    </body>
+</html>

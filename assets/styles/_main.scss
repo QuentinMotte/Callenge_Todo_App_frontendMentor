@@ -1,0 +1,72 @@
+main{
+    max-width: 535px;
+    margin: 30px auto;
+    background: $Very-Dark-Desaturated-Blue;
+    border-radius: 5px;
+
+    li{
+        width: 100%;
+        padding: 25px 0 25px 80px;
+        color: $Light-Grayish-Blue1;
+        position: relative;
+        border-bottom: 1px solid $Very-Dark-Grayish-Blue ; 
+        cursor: pointer;
+        transition: 0.5s;
+        &::before{
+            content: "";
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            border-radius: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            border: 1px solid $Very-Dark-Grayish-Blue;
+        }
+            &::after{
+                content: url(../images/icon-cross.svg);
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: 20px;
+                display: none;
+            }
+            &:hover{
+                &::after{
+                    display: flex;
+                }
+            }
+            &:hover{
+                &::before{
+                    border: 1px solid;
+                    border-top-color:rgba(109,206,249,1);
+                    border-left-color: rgba(109,206,249,1);
+                    border-right-color: rgba(233,157,229,1);
+                    border-bottom-color: rgba(233,157,229,1);
+                }
+            }
+
+    }
+
+    li.checked{
+        text-decoration: line-through;
+        color: $Very-Dark-Grayish-Blue;
+        position: relative;
+
+        &::before{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            content:  url(../images/icon-check.svg);
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            border-radius: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            border: 1px solid $Very-Dark-Grayish-Blue;
+            background: $Check-Background;
+        }
+    }
+}

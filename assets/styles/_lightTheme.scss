@@ -1,0 +1,17 @@
+body.light{
+    background-color:$Very-Light-Gray ;
+    background-image: url(../images/bg-desktop-light.jpg);
+
+    #item{
+        background:$Very-Light-Gray;
+        color:$Very-Dark-Grayish-Blue2;
+        
+        &::placeholder{
+        color:$Dark-Grayish-Blue;
+    }
+    }
+    form::before{
+        border: 1px solid $Very-Light-Grayish-Blue;
+    }
+
+}

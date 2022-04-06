@@ -13,5 +13,39 @@ body.light{
     form::before{
         border: 1px solid $Very-Light-Grayish-Blue;
     }
-
+    main{
+        background: $Very-Light-Gray;
+        color: rgba(161, 157, 157, 0.733);
+        li{
+            color: $Very-Dark-Grayish-Blue2;
+            border-bottom: 1px solid $Very-Light-Grayish-Blue ;
+            &::before{
+                border: 1px solid $Very-Light-Grayish-Blue;
+            }
+            &:hover{
+                &::before{
+                    border: 1px solid;
+                    border-top-color:rgba(109,206,249,1);
+                    border-left-color: rgba(109,206,249,1);
+                    border-right-color: rgba(233,157,229,1);
+                    border-bottom-color: rgba(233,157,229,1);
+                }
+            }
+        }
+        li.checked{
+            color:  $Light-Grayish-Blue1;
+        }
+        .footer-main{
+            p{
+                color:  $Dark-Grayish-Blue1;
+            }
+            input[type="button"]{
+                color:  $Dark-Grayish-Blue1;
+                &:hover{
+                color: $Bright-Blue;
+                font-family: $font1;
+                }
+            }
+        }
+    } 
 }

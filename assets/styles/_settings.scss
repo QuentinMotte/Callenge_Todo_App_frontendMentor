@@ -50,21 +50,6 @@ body{
     max-width: 1440px;
     margin: 0 auto;
 }
-input[type="button"]{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    transition: 0.15s;
-    font-size: 0.950rem;
-
-    &:hover{
-        transform: scale(1.1);
-        font-family: $font1;
-    }
-    &:active{
-        color: $Bright-Blue;
-    }
-}
 
 
 

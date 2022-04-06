@@ -1,12 +1,14 @@
 main{
     max-width: 535px;
-    margin: 30px auto;
+    margin: 23px auto;
     background: $Very-Dark-Desaturated-Blue;
     border-radius: 5px;
+    box-shadow: 1px 15px 20px 0px;
+    color: rgba(10, 10, 10, 0.733);
 
     li{
         width: 100%;
-        padding: 25px 0 25px 80px;
+        padding: 22px 0 22px 80px;
         color: $Light-Grayish-Blue1;
         position: relative;
         border-bottom: 1px solid $Very-Dark-Grayish-Blue ; 
@@ -50,7 +52,7 @@ main{
 
     li.checked{
         text-decoration: line-through;
-        color: $Very-Dark-Grayish-Blue;
+        color: $Dark-Grayish-Blue1;
         position: relative;
 
         &::before{
@@ -68,5 +70,36 @@ main{
             border: 1px solid $Very-Dark-Grayish-Blue;
             background: $Check-Background;
         }
+    }
+    .footer-main{
+        display: flex;
+        padding: 22px 0 22px 0px;
+        justify-content: space-around;
+
+        p{
+            font-size: 0.9rem;
+            color:  $Dark-Grayish-Blue1;
+            span{
+                font-size: 0.9rem;
+            }
+        }
+        input[type="button"]{
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: 0.15s;
+            font-size: 0.950rem;
+            padding-left: 10px;
+            color:  $Dark-Grayish-Blue1;
+        
+            &:hover{
+                color: $Bright-Blue;
+                font-family: $font1;
+            }
+            &:active{
+                color: $Bright-Blue;
+            }
+        }
+        
     }
 }

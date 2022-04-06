@@ -70,7 +70,7 @@ form.addEventListener("submit", (e) => {
     dynamicNumber();
 });
 //
-//Add class checked or remove an element
+//Add class checked or class toDo
 
 list.addEventListener("click", (e) => {
     e.target.classList.toggle("checked");

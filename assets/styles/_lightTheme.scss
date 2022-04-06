@@ -46,6 +46,12 @@ body.light{
                 font-family: $font1;
                 }
             }
+            .buttonFooter{
+                @media screen and (max-width : 535px){
+                    background: $Very-Light-Gray;
+                    box-shadow:1px 7px 14px ;
+            }
+            }
         }
     } 
 }

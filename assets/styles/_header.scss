@@ -56,4 +56,8 @@ header{
             z-index: 200;
         }   
     }
+
+    @media screen and (max-width : 535px){
+        max-width: 375px;
+    }
 }

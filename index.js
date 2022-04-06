@@ -7,6 +7,11 @@ const li = document.getElementsByName("draggable");
 const numberOfItems = document.getElementById("numberOfItems");
 //For delete completed
 const deleteBtn = document.querySelector(".clearCompleted");
+//For sorting
+const btnAll = document.getElementById("btnAll");
+const btnActive = document.getElementById("btnActive");
+const btnComplete = document.getElementById("btnCompleted");
+
 //For Theme Color
 const lightTheme = document.getElementById("sun");
 const darkTheme = document.getElementById("moon");
@@ -35,7 +40,7 @@ let getTodo = () => {
         list.innerHTML = window.localStorage.todoList;
     } else {
         list.innerHTML = `<li name="draggable" class="checked" draggable="true">Complete online Javascript course
-    </li><li name="draggable" draggable="true">Jog around the park 3x</li><li name="draggable" draggable="true">10 minutes meditation</li><li name="draggable" draggable="true">Read for one hour</li><li name="draggable" draggable="true">Pick up groceries</li><li name="draggable" draggable="true">Complete Todo App on Frontend Mentor</li>`;
+    </li><li name="draggable" draggable="true" class="toDo">Jog around the park 3x</li><li name="draggable" draggable="true" class="toDo">10 minutes meditation</li><li name="draggable" draggable="true" class="toDo">Read for one hour</li><li name="draggable" draggable="true" class="toDo">Pick up groceries</li><li name="draggable" draggable="true" class="toDo">Complete Todo App on Frontend Mentor</li>`;
     }
 };
 getTodo();
@@ -54,7 +59,7 @@ dynamicNumber();
 //Add a Todo
 
 function addTodo() {
-    list.innerHTML += `<li name="draggable" draggable="true">${item.value}</li>`;
+    list.innerHTML += `<li name="draggable" draggable="true"class="toDo">${item.value}</li>`;
     item.value = "";
 }
 
@@ -69,10 +74,11 @@ form.addEventListener("submit", (e) => {
 
 list.addEventListener("click", (e) => {
     e.target.classList.toggle("checked");
+    e.target.classList.toggle("toDo");
     storeList();
     dynamicNumber();
 });
-console.log(li.length);
+console.log(li);
 
 //
 //Delete all checked element when click on clear completed
@@ -83,9 +89,29 @@ deleteBtn.addEventListener("click", () => {
     storeList();
     dynamicNumber();
 });
-
 //
-// https://codepen.io/gabrielferreira/pen/jMgaLe //
+//Sorting
+btnAll.addEventListener("click", () => {
+    let listToDo = document.querySelectorAll(".toDo");
+    let listChecked = document.querySelectorAll(".checked");
+    listToDo.forEach((todo) => (todo.style.display = "block"));
+    listChecked.forEach((todo) => (todo.style.display = "block"));
+});
+
+btnComplete.addEventListener("click", () => {
+    let listToDo = document.querySelectorAll(".toDo");
+    let listChecked = document.querySelectorAll(".checked");
+    listToDo.forEach((todo) => (todo.style.display = "none"));
+    listChecked.forEach((todo) => (todo.style.display = "block"));
+});
+
+btnActive.addEventListener("click", () => {
+    let listToDo = document.querySelectorAll(".toDo");
+    let listChecked = document.querySelectorAll(".checked");
+    listChecked.forEach((todo) => (todo.style.display = "none"));
+    listToDo.forEach((todo) => (todo.style.display = "block"));
+});
+//
 //DRAG AND DROP
 //
 function dragStart(e) {
@@ -134,3 +160,5 @@ var listItens = document.getElementsByName("draggable");
 [].forEach.call(listItens, function (item) {
     addEventsDragAndDrop(item);
 });
+
+// https://codepen.io/gabrielferreira/pen/jMgaLe //

@@ -1,3 +1,56 @@
+//
+//DRAG AND DROP
+//
+function dragStart(e) {
+    dragSrcEl = this;
+    e.dataTransfer.setData("text/html", this.innerHTML);
+}
+
+function dragEnter(e) {}
+
+function dragLeave(e) {
+    e.stopPropagation();
+}
+
+function dragOver(e) {
+    e.preventDefault();
+    e.dataTransfer.dropEffect = "move";
+    return false;
+}
+
+function dragDrop(e) {
+    if (dragSrcEl != this) {
+        dragSrcEl.innerHTML = this.innerHTML;
+        this.innerHTML = e.dataTransfer.getData("text/html");
+    }
+    return false;
+}
+
+function dragEnd(e) {
+    var listItens = document.getElementsByName("draggable");
+    [].forEach.call(listItens, function (item) {
+        item.classList.remove("over");
+    });
+    this.style.opacity = "1";
+}
+
+function addEventsDragAndDrop(el) {
+    el.addEventListener("dragstart", dragStart, false);
+    el.addEventListener("dragenter", dragEnter, false);
+    el.addEventListener("dragover", dragOver, false);
+    el.addEventListener("dragleave", dragLeave, false);
+    el.addEventListener("drop", dragDrop, false);
+    el.addEventListener("dragend", dragEnd, false);
+}
+
+var listItens = document.getElementsByName("draggable");
+[].forEach.call(listItens, function (item) {
+    addEventsDragAndDrop(item);
+});
+
+// https://codepen.io/gabrielferreira/pen/jMgaLe //
+
+
 //For add Todo
 const form = document.querySelector("form");
 const item = document.getElementById("item");
@@ -68,6 +121,10 @@ form.addEventListener("submit", (e) => {
     addTodo();
     storeList();
     dynamicNumber();
+    var listItens = document.getElementsByName("draggable");
+[].forEach.call(listItens, function (item) {
+    addEventsDragAndDrop(item);
+});
 });
 //
 //Add class checked or class toDo
@@ -111,54 +168,9 @@ btnActive.addEventListener("click", () => {
     listChecked.forEach((todo) => (todo.style.display = "none"));
     listToDo.forEach((todo) => (todo.style.display = "block"));
 });
-//
-//DRAG AND DROP
-//
-function dragStart(e) {
-    dragSrcEl = this;
-    e.dataTransfer.setData("text/html", this.innerHTML);
-}
 
-function dragEnter(e) {}
-
-function dragLeave(e) {
-    e.stopPropagation();
-}
-
-function dragOver(e) {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = "move";
-    return false;
-}
-
-function dragDrop(e) {
-    if (dragSrcEl != this) {
-        dragSrcEl.innerHTML = this.innerHTML;
-        this.innerHTML = e.dataTransfer.getData("text/html");
-    }
-    return false;
-}
-
-function dragEnd(e) {
-    var listItens = document.getElementsByName("draggable");
-    [].forEach.call(listItens, function (item) {
-        item.classList.remove("over");
-    });
-    this.style.opacity = "1";
-}
-
-function addEventsDragAndDrop(el) {
-    el.addEventListener("dragstart", dragStart, false);
-    el.addEventListener("dragenter", dragEnter, false);
-    el.addEventListener("dragover", dragOver, false);
-    el.addEventListener("dragleave", dragLeave, false);
-    el.addEventListener("drop", dragDrop, false);
-    el.addEventListener("dragend", dragEnd, false);
-}
-
+//Drag&Drop
 var listItens = document.getElementsByName("draggable");
 [].forEach.call(listItens, function (item) {
     addEventsDragAndDrop(item);
 });
-
-// https://codepen.io/gabrielferreira/pen/jMgaLe //
